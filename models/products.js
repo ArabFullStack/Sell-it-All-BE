@@ -4,28 +4,27 @@ const { Schema } = mongoose;
 const productSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
   price: {
     type: Number,
-    required: true,
+    required: true
   },
   quantity: {
     type: Number,
-    required: true,
+    required: true
   },
   category: {
-    type: String,
-    lowercase: true,
-    enum: ['furniture', 'books', 'bikes', 'electronics']
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
   },
   image: {
     type: Array,
-    required: true,
+    required: true
   },
   reviews: [
     {
