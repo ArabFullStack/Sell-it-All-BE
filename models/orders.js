@@ -21,15 +21,7 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  address: {
-    type: String,
-    required: true,
-  },
-  satus: {
-    type: String,
-    enum: ['Pickedup', 'Cancelled'],
-  },
 });
 
-const orderModel = mongoose.model('orders', orderSchema);
+const orderModel = mongoose.model('Order', orderSchema);
 module.exports = orderModel;
